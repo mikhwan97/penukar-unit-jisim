@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+
+    </style>
+    <title>Penukar Unit Jisim / Berat</title>
+</head>
+<div style="border-style: solid; border-color: #333;border-radius: 25px; box-shadow: 5px 10px #dbdbdb;padding: 20px ; ">
+    <div class="calculator-container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 text-center mb-3">Penukar Unit Jisim</h1>
+                <div id="output">
+                    <div class="card mb-2" style="background: #FF914D;">
+                        <div class="card-block">
+                            <h4 style="color:white;">Kilogram</h4>
+                            <input id="kgOutput" type="number" class="form-control form-control-lg" placeholder="Masukkan Kilogram...">
+                            <div id="kgOutput"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-2" style="background: #E4B880;">
+                        <div class="card-block">
+                            <h4 style="color:white;">Gram</h4>
+                            <input id="gramsOutput" type="number" class="form-control form-control-lg" placeholder="Masukkan Gram...">
+                        </div>
+                    </div>
+                    <div class="card mb-2" style="background: #ACB591;">
+                        <div class="card-block">
+                            <h4 style="color:white;">Tan</h4>
+                            <input id="tonneOutput" type="number" class="form-control form-control-lg" placeholder="Masukkan Tan...">
+                        </div>
+                    </div>
+                    <div class="card mb-2" style="background: #5B8D80;">
+                        <div class="card-block">
+                            <h4 style="color:white;">Paun</h4>
+                            <input id="poundOutput" type="number" class="form-control form-control-lg" placeholder="Masukkan Paun...">
+                        </div>
+                    </div>
+                    <div class="card mb-2" style="background: #50706C;">
+                        <div class="card-block">
+                            <h4 style="color:white;">Auns</h4>
+                            <input id="ozOutput" type="number" class="form-control form-control-lg" placeholder="Masukkan Auns...">
+                        </div>
+                    </div>
+                    <div class="card mb-2" style="background: #304A3F;">
+                        <div class="card-block">
+                            <h4 style="color:white;">Karat</h4>
+                            <input id="caratOutput" type="number" class="form-control form-control-lg" placeholder="Masukkan Karat...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin:9px ;text-align: center; padding: 3px; ">
+        
+        <a href="PakcikEngineer"><img src="https://pakcikengineer.com/wp-content/uploads/2020/09/cropped-Pakcik_engineer_logo_and_tagline-removebg-preview.png"
+            style="width: 20%;" alt="Italian Trulli"></a>
+            <p style="font-size:10px; color: rgb(179, 179, 179);">Penukar Unit Jisim V1.01<br></p>
+            <p style="font-size:10px; color: rgb(179, 179, 179);"><b>Penafian:</b><br> PakcikEngineer.com tidak bertanggungjawab atas kerosakan atau kerugian disebabakan penggunaan alat ini.
+                Sila hubungi kami jika anda percaya terdapat kesalahan yang ketara. Penukar unit jisim ini hanyalah anggaran hampir tepat. <br></p>
+            </div>
+
+    <script>
+
+        document.getElementById('poundOutput').addEventListener('input', function (e) {
+            document.getElementById('output').style.visibility='visible';
+            let lbs = e.target.value;
+            document.getElementById('gramsOutput').value=lbs/0.0022046;
+            document.getElementById('kgOutput').value=lbs/2.2046;
+            document.getElementById('ozOutput').value=lbs*16;
+            document.getElementById('tonneOutput').value=lbs/22046;
+            document.getElementById('caratOutput').value=lbs*2267.96;
+        });
+        document.getElementById('gramsOutput').addEventListener('input', function (e) {
+            document.getElementById('output').style.visibility='visible';
+            let g = e.target.value;
+            document.getElementById('poundOutput').value=g*0.0022046;
+            document.getElementById('kgOutput').value=g/1000;
+            document.getElementById('ozOutput').value=g/28.35;
+            document.getElementById('tonneOutput').value=g/1000000;
+            document.getElementById('caratOutput').value=g*5;
+        });
+        document.getElementById('kgOutput').addEventListener('input', function (e) {
+            document.getElementById('output').style.visibility='visible';
+            let kg = e.target.value;
+            document.getElementById('poundOutput').value=kg*2.205;
+            document.getElementById('gramsOutput').value=kg*1000;
+            document.getElementById('ozOutput').value=kg*35.274;
+            document.getElementById('tonneOutput').value=kg/1000;
+            document.getElementById('caratOutput').value=kg*5000;
+        });
+        document.getElementById('ozOutput').addEventListener('input', function (e) {
+            document.getElementById('output').style.visibility='visible';
+            let ounc = e.target.value;
+            document.getElementById('poundOutput').value=ounc/16;
+            document.getElementById('gramsOutput').value=ounc*28.35;
+            document.getElementById('kgOutput').value=ounc/35.274;
+            document.getElementById('tonneOutput').value=ounc/35274;
+            document.getElementById('caratOutput').value=ounc*141.748;
+        });
+        
+        document.getElementById('tonneOutput').addEventListener('input', function (e) {
+            document.getElementById('output').style.visibility='visible';
+            let ton = e.target.value;
+            document.getElementById('poundOutput').value=ton*2205;
+            document.getElementById('gramsOutput').value=ton*1000000;
+            document.getElementById('kgOutput').value=ton*1000;
+            document.getElementById('ozOutput').value=ton*35274;
+            document.getElementById('caratOutput').value=ton*5000000;
+        });
+        document.getElementById('caratOutput').addEventListener('input', function (e) {
+            document.getElementById('output').style.visibility='visible';
+            let car = e.target.value;
+            document.getElementById('poundOutput').value=car/2267.96;
+            document.getElementById('gramsOutput').value=car/5;
+            document.getElementById('kgOutput').value=car*5000;
+            document.getElementById('ozOutput').value=car/141.748;
+            document.getElementById('tonneOutput').value=car/5000000;
+        });
+        </script>
+    
+    </div>
+</html>
